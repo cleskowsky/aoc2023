@@ -29,10 +29,7 @@ g = parse_game(s)
 
 
 def possible_game(game, bag):
-    for x in game['cubes']:
-        if x[0] > bag[x[1]]:
-            return False
-    return True
+    return all(x[0] > bag[x[1]] for x in game['cubes'])
 
 
 assert possible_game(g, bag)
