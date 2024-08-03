@@ -28,6 +28,8 @@ bag = {
 g = parse_game(s)
 
 
+# Part 1
+
 def possible_game(game, bag):
     return all(x[0] <= bag[x[1]] for x in game['cubes'])
 
@@ -38,4 +40,4 @@ g = parse_game('Game 1: 13 red')
 assert not possible_game(g, bag)
 
 valid_games = filter(lambda x: possible_game(x, bag), map(parse_game, open('day2.txt').readlines()))
-print(sum(x['id'] for x in valid_games))
+assert 1734 == sum(x['id'] for x in valid_games)
