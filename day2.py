@@ -37,7 +37,7 @@ def possible_game(game, bag):
     return all(x[0] <= bag[x[1]] for x in game['cubes'])
 
 
- assert possible_game(g, bag)
+assert possible_game(g, bag)
 
 g = parse_game('Game 1: 13 red')
 assert not possible_game(g, bag)
